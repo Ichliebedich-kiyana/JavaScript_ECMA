@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>读写编译顺序</title>
+    <script>
+      // js解释器运行js分为两步：预解析 代码执行
+      // 预解析：
+      // 1.js解释器会把js里所有的var和function提前到当前作用域的最前面
+      // 2.预解析分为变量预解析和函数预解析
+      // 变量预解析：把所有变量声明提升到当前的作用域最前面，不提升赋值操作
+      // 函数预解析：把所有的函数声明提升到当前作用域最前面，但不会调用它们
+
+      // 代码执行：再按照代码书写的顺序自上而下执行
+
+      console.log(num); // undefined，变量必须在打印前声明
+      var num = 1; //num变量被提前了，但是赋值为1没有被赋值
+      /* 相当于执行了：
+
+        var num;
+        console.log(num);
+        num = 1;
+
+      */
+
+      fn(); // 11,函数的调用可以在声明之前
+      function fn() {
+        console.log(11);
+      }
+      /* 相当于执行了：
+
+        function fn() {
+          console.log(11);
+      }
+      fn();
+
+      */
+
+      fn1(); // 调用失败，利用变量声明函数必须在声明函数后再调用
+      var fn1 = function () {
+        console.log(22);
+      };
+      /* 相当于执行了：
+
+      var fn1;
+      fn1();
+      fn1 = function () {
+        console.log(22);
+
+      }
+      */
+
+      // 面试快乐题
+      f1();
+      console.log(c);
+      console.log(b);
+      console.log(a);
+
+      function f1() {
+        var a = (b = c = 9);
+        // 相当于 var a = 9; b = 0; c = 9;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+      }
+
+      // 结果：9,9,9,9,9,Error
+      // （测试时要把上面注释起来）
+    </script>
+  </head>
+  <body></body>
+</html>

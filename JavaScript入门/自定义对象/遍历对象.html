@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>遍历对象</title>
+    <script>
+      var obj = {
+        youName: "gura",
+        age: 18,
+        sex: "女",
+        fn: function () {
+          console.log("A");
+        },
+      };
+      // 下面使用for in遍历对象
+      for (var k in obj) {
+        console.log(k); // 得到属性
+        console.log(obj[k]); // 得到属性值
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

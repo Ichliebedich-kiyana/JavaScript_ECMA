@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch语句</title>
+    <script>
+      //switch里括号表达式的值会与case的值对应，来决定执行哪个case里的语句
+      //若case里不加break,则会把其后的所有case里的语句都执行一遍
+      //若表达式的值与所有的case都不符，则会执行default里的语句
+
+      //数据匹配要求是===，所以这里有个类型转换成整型
+      switch (parseInt(prompt("你输入月份，我来翻译"))) {
+        case 1:
+          alert("一月");
+          break;
+        case 2:
+          alert("二月");
+          break;
+        case 3:
+          alert("三月");
+          break;
+        case 4:
+          alert("四月");
+          break;
+        case 5:
+          alert("五月");
+          break;
+        case 6:
+          alert("六月");
+          break;
+        case 7:
+          alert("七月");
+          break;
+        case 8:
+          alert("八月");
+          break;
+        case 9:
+          alert("九月");
+          break;
+        case 10:
+          alert("十月");
+          break;
+        case 11:
+          alert("十一月");
+          break;
+        case 12:
+          alert("十二月");
+          break;
+        default:
+          alert("测你");
+      }
+      alert("~~~///(^v^)\\\~~~");
+    </script>
+  </head>
+  <body></body>
+</html>

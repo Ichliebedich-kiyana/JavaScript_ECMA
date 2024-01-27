@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>continue和break</title>
+    <script>
+      for (var i = 1; i <= 6; i++) {
+        if (i == 3) {
+          continue; //循环体遇到continue时会跳过后面的循环体，进行下一次循环
+        }
+        if (i == 6) {
+          break; //循环体遇到break，则会跳出整个循环
+        }
+        console.log("现在是星期" + i);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

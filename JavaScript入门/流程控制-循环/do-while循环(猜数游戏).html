@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>do while循环(猜数游戏)</title>
+    <script>
+      //猜数游戏
+      //语法与C语言一致，也不多币币
+      var key = Math.ceil(Math.random() * 100); //生成0-100(包括两端)的随机整数,但生成0的概率会很低
+      var conut = 0;
+      alert("快说，0-100里我想的是哪个整数？");
+
+      do {
+        var num = prompt("ヾ(^▽^*)))");
+        conut++;
+        if (num > key) {
+          alert("太大了(╬▔皿▔)╯");
+        } else if (num < key) {
+          alert("太小了(⊙ˍ⊙)？");
+        } else if (num == key) {
+          alert("你用了" + conut + "次就猜出来了");
+          alert("（づ￣3￣）づ╭❤️～");
+        } else {
+          alert("(⊙ˍ⊙)？(⊙ˍ⊙)？(⊙ˍ⊙)？");
+        }
+      } while (num != key);
+    </script>
+  </head>
+  <body></body>
+</html>
