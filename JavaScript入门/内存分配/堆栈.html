@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>栈和堆</title>
+    <script>
+      /* 简单数据类型存入栈中 */
+      // 直接在栈里开辟空间，存放简单数据类型的值
+      //
+
+      /* 复杂数据类型存入堆中 */
+      // 数据的值存在堆中，地址(js自动分配)存在栈中
+
+      // 简单数据类型的形参的在函数内的改变不会影响实参
+      function fn(x) {
+        x++;
+      }
+      var a = 10;
+      console.log(a); // 10
+      fn(a);
+      console.log(a); // 10
+
+      // 复杂数据类型的形参在函数内部的改变会影响实参
+      function Person(name) {
+        this.name = name;
+      }
+
+      function f1(x) {
+        x.name = "张学友";
+      }
+
+      var p = new Person("刘德华");
+      console.log(p.name); // 刘德华
+      f1(p);
+      console.log(p.name); // 张学友(实参p的属性的属性值被函数f1更改了)
+    </script>
+  </head>
+  <body></body>
+</html>

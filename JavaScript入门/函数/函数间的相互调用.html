@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数间的相互调用</title>
+    <script>
+      // 非常神奇，js的函数调用没有顺序
+      // 这意味着只要声明了函数，那么这个函数可以在任意位置调用，甚至可以在它声明前就调用
+      // 所以函数的嵌套使用时也不需要在意次序
+      // 这与C语言大不相同，C的函数读取顺序是自上而下的
+      // 这tm也太™方便了
+      fn1();
+      function fn1() {
+        console.log("fn11");
+        fn2();
+      }
+
+      function fn2() {
+        console.log("fn22");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

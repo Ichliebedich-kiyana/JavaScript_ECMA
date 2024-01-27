@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>统计在字符串中出现最多次的字符</title>
+    <script>
+      // 自己写的，非常麻烦O(n^2)，并且只能返回第一个出现次数最多的字符
+      /* 思路 */
+      // 1.来个双层循环，将字符串中每个字符出现的次数存入一个数组中(这个数组会对同一个字符出现的次数多次存放)
+      // 2.找出这个数组的最大值，再用indexOf返回第一个对应最大值的数组下标
+      // 3.用这个下标去访问目的字符串，救能得到出现次数最多的第一个字符
+      function FindMaxCountStr(str) {
+        var count = -1;
+        var arr = [];
+        for (var i = 0; i < str.length; i++) {
+          for (var j = 0; j < str.length; j++) {
+            if (str[i] == str[j]) count++;
+          }
+          arr.push(count);
+          count = -1;
+        }
+
+        var maxNum = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+          if (arr[i] > maxNum) maxNum = arr[i];
+        }
+
+        var sign = arr.indexOf(maxNum);
+        var signChar = str.charAt(sign);
+
+        return signChar;
+      }
+
+      /* 利用对象 */
+      /* 思路 */
+      // 1.用charAt获得字符串中的每一个字符，将字符作为属性添加到一个新建对象中，属性值是其出现的的个数
+      // 2.遍历遇到重复的字符让对应属性的属性值+1即可
+      // 3.遍历对象找出属性值最大的属性，这个属性的属性名即为出现次数最多的字符
+      function FindMaxCountStrByObj(str, char) {
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+          var chars = str.charAt(i); // 找出字符串的所有字符
+          // 将字符作为属性存入对象中，属性值为出现次数
+          if (o[chars]) {
+            o[chars]++;
+          } else {
+            o[chars] = 1;
+          }
+        }
+        // 遍历对象，找出属性值最大的属性
+        var result = "";
+        var max = 0;
+        for (var k in o) {
+          if (o[k] > max) {
+            max = o[k];
+            result = k;
+          }
+
+          return result;
+        }
+      }
+
+      /* 测试 */
+      var str = "abcoefoxyozzopp";
+      var result = FindMaxCountStr(str);
+      var result1 = FindMaxCountStrByObj(str);
+      console.log(result);
+      console.log(result1);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>输出数组最大值</title>
+    <script>
+      var arrNum = parseInt(prompt("请输入数组元素个数"));
+      var arr = [];
+
+      for (var i = 0; i < arrNum; i++) {
+        arr[i] = parseInt(prompt("请输入数组第" + (i + 1) + "个的值"));
+      }
+      var arrMaxNum = arr[0];
+
+      for (var i = 1; i < arrNum; i++) {
+        if (arr[i] > arrMaxNum) {
+          arrMaxNum = arr[i];
+        }
+      }
+
+      alert("该数组里的最大元素为" + arrMaxNum);
+    </script>
+  </head>
+  <body></body>
+</html>

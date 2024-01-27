@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>倒计时</title>
+    <script>
+      function countDown(time) {
+        var nowTime = +new Date(); // 返回当前时间的时间戳
+        var inputTime = +new Date(time); // 返回用户输入时间的时间戳
+
+        var times = (inputTime - nowTime) / 1000; // 剩余时间的秒数
+        // 时间转换公式就记咯
+        var day = parseInt(times / 60 / 60 / 24);
+        day < 10 ? "0" + day : day;
+        var hour = parseInt((times / 60 / 60) % 24);
+        hour < 10 ? "0" + hour : hour;
+        var min = parseInt((times / 60) % 60);
+        min < 10 ? "0" + min : min;
+        var secend = parseInt(times % 60);
+        secend < 10 ? "0" + secend : secend;
+        return day + "天" + hour + "时" + min + "分" + secend + "秒";
+      }
+      alert("请输入活动开始的时间");
+      var actTime = prompt("格式：2019-5-1 18:00:00");
+      alert("距离活动开始还有:" + countDown(actTime));
+      alert("( •̀ ω •́ )✧");
+    </script>
+  </head>
+  <body></body>
+</html>

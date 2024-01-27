@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数字补0</title>
+    <script>
+      //用户输入数字，如果数字小于10，则在前面补0(如01，09);如果数字大于10，则不需要补0
+
+      var time = prompt("请输入0-59之间的一个数字");
+
+      //   if (time > 10) {
+      //     alert(time + "不需要补零");
+      //   } else {
+      //     alert("0" + time);
+      //   }
+
+      //三元表达式的等价形式
+      var result = time > 10 ? time : "0" + time;
+      alert(result);
+    </script>
+  </head>
+  <body></body>
+</html>

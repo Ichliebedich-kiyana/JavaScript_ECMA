@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>求学生成绩</title>
+    <script>
+      // 要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印出该班级的总成绩以及平均成绩
+
+      var stdNum = parseInt(prompt("请输入班级人数"));
+      var stdSumScore = 0;
+      for (var i = 1; i <= stdNum; i++) {
+        var stdScore = parseFloat(prompt("请输入学生" + i + "的成绩"));
+        stdSumScore += stdScore;
+      }
+      var stdAverageScore = stdSumScore / stdNum;
+      alert("这些学生的总成绩是" + stdSumScore);
+      alert("这些学生的平均成绩是" + stdAverageScore);
+    </script>
+  </head>
+  <body></body>
+</html>

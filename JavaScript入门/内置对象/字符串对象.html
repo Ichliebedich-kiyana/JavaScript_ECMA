@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>字符串对象</title>
+    <script>
+      // 对象才有属性和方法，复杂数据类型才有属性和方法
+      // 那么简单数据类型str为什么会有length属性呢？
+      // 因为js把简单数据类型str包装成了复杂数据类型
+      /* 底层实现 */
+      var temp = new String("gura"); // 构造新对象
+      str1 = temp; // 把临时变量赋值给被包装的变量
+      temp = null; // 销毁临时变量
+
+      /* 计算字符串长度 */
+      var str1 = "gura";
+      console.log(str1.length);
+
+      /* 字符串不可变性 */
+      var str2 = "派大星";
+      str2 = "海绵宝宝";
+      // 经过这样一轮赋值操作后，str2指向的变量由派大星变成了海绵宝宝
+      // 但是派大星在内存中依然存在，海绵宝宝被存放在新开辟的内存中去了
+      // 同理，字符串的所有方法，都不不会修改字符串本身，操作完成后会开辟新空间，返回一个新字符串
+      // 所以在js中不要频繁地进行字符串的赋值和拼接操作，会浪费内存
+
+      /* 根据字符返回位置 */
+      var str3 = "妈妈生的";
+      console.log(str3.indexOf("妈"));
+      console.log(str3.indexOf("妈", 1)); // 从索引号1的位置开始查找(数组也有这种用法)
+      // lastIndexOf()同理，查找顺序相反
+
+      /* 根据位置返回字符 */
+      // 1.charAt()
+      var str4 = "gura";
+      console.log(str4.charAt(3)); // a
+      // 遍历所有字符
+      for (var i = 0; i < str4.length; i++) {
+        console.log(str4.charAt(i));
+      }
+
+      // 2.str[] h5,IE8+支持，等效于charAt
+      console.log(str4[3]);
+
+      // 3.charCodeAt() 返回指定位置字符的ASCII码
+      console.log(str4.charCodeAt(3));
+
+      /* 字符串操作方法 */
+      // 1.拼接字符串 concat()
+      // 实际还是用+拼接多
+      var str5 = "gura";
+      console.log(str5.concat("AAAA"));
+
+      // 2.截取字符串 substr('截取的起始位置'， '截取的字符个数')
+      var str6 = "改革春风吹满地";
+      console.log(str6.substr(2, 2));
+
+      // 3.替换字符串 replace('被替换字符'， '替换成字符')
+      // 只替换第一个目标字符(要替换所有就用循环)
+      var str7 = "gura";
+      console.log(str7.replace("g", "G"));
+
+      // 4.字符串转换为数组 split("分隔符")
+      // 根据原字符串分隔符来分割成数组
+      var str8 = "red, green, blue";
+      console.log(str8.split(","));
+    </script>
+  </head>
+  <body></body>
+</html>

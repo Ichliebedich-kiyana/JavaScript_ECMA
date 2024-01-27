@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>封装自己的数学对象</title>
+    <script>
+      var myMath = {
+        PI: 3.141592654,
+        max: function () {
+          if (arguments.length == 0) {
+            return -Infinity;
+          }
+
+          var maxNum = arguments[0];
+          for (var i = 1; i < arguments.length; i++) {
+            if (isNaN(arguments[i])) {
+              return NaN;
+            }
+            if (arguments[i] > maxNum) {
+              maxNum = arguments[i];
+            }
+          }
+
+          return maxNum;
+        },
+        min: function () {
+          if (arguments.length == 0) {
+            return -Infinity;
+          }
+
+          var minNum = arguments[0];
+          for (var i = 1; i < arguments.length; i++) {
+            if (isNaN(arguments[i])) {
+              return NaN;
+            }
+            if (arguments[i] < minNum) {
+              minNum = arguments[i];
+            }
+          }
+
+          return minNum;
+        },
+      };
+
+      console.log(myMath.max(1, 231, 42));
+      console.log(myMath.min());
+      console.log(myMath.min(-123, -2221, 231, 0, 123));
+    </script>
+  </head>
+  <body></body>
+</html>

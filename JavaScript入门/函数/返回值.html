@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数的返回值</title>
+    <script>
+      // 函数遇到return会直接中止
+      // 一个函数只有一个返回值， 需要多个返回值用数组
+      // 如果接收一个没有返回值的函数的返回值，则返回值为undefined
+      function Max(a, b) {
+        return a >= b ? a : b;
+        alert("Error");
+      }
+      var num1 = Max(4, 1);
+      var num2 = Max(2, 3);
+      var num3 = Max(1, 1);
+      console.log(num1, num2, num3);
+
+      // 求两数之和，之差
+      function getResult(num1, num2) {
+        // var sum = num1 + num2;
+        // var cha = num1 - num2;
+        // var result = [sum, cha];
+
+        // return result;
+
+        return [num1 + num2, num1 - num2];
+      }
+
+      console.log(getResult(6, 2));
+    </script>
+  </head>
+  <body></body>
+</html>

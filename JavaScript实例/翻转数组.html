@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>翻转数组</title>
+    <script>
+      //数组间相互赋值会导致其中一个数组的值在之后改变了，另一个也会改变
+      var arr = [1, 2, 3, 4, 5];
+      var newArr = [];
+
+      for (i = arr.length - 1; i >= 0; i--) {
+        newArr[newArr.length] = arr[i];
+      }
+      console.log(newArr);
+    </script>
+  </head>
+  <body></body>
+</html>

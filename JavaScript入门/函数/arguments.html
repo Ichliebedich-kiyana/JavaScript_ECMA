@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arguments</title>
+    <script>
+      /* 在JS中，arguments实际上是当前函数的一个内置对象。所有函数都内置了一个arguments对象，arguments对象中存储了传递给函数的所有实参 */
+      function fn() {
+        console.log(arguments);
+        console.log(arguments.length);
+      }
+      //arguments的展现形式是伪数组
+      //1.它具有数组的length属性
+      //2.可以通过数组下标访问arguments里的数据
+      //3.它没有缺少数组的一些操作方法
+      fn(1, 2, 3);
+    </script>
+  </head>
+  <body></body>
+</html>

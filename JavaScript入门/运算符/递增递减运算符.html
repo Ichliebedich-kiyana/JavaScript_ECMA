@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>递增和递减运算符</title>
+    <script>
+      //前置先进行运算，再返回
+      //后置先返回原值，后自加
+      //前置后置如果单独成句，则没有区别
+      var numFront = 10;
+      console.log(++numFront); //先进行了计算，所有打印结果是11
+      var numAfter = 10;
+      console.log(numAfter++); //先返回结果，所以打印10
+      console.log(numAfter); //后进行运算，打印11
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日期格式化</title>
+    <script>
+      var date = new Date();
+      console.log(date.getFullYear()); // 返回当前年份
+      console.log(date.getMonth() + 1); // 返回当前月份(0-11)，要加1
+      console.log(date.getDate()); // 返回日期
+      console.log(date.getDay()); // 返回星期(星期天返回0)
+
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var dates = date.getDate();
+      var day = date.getDay();
+      var hour = date.getHours();
+      hour = hour < 10 ? "0" + hour : hour; // 为小时补0
+      var min = date.getMinutes();
+      min = min < 10 ? min + "0" : min;
+      var secend = date.getSeconds();
+      secend = secend < 10 ? secend + "0" : secend;
+      // 星期文字转换
+      switch (day) {
+        case 1:
+          day = "一";
+          break;
+        case 2:
+          day = "二";
+          break;
+        case 3:
+          day = "三";
+          break;
+        case 4:
+          day = "四";
+          break;
+        case 5:
+          day = "五";
+          break;
+        case 6:
+          day = "六";
+          break;
+        case 0:
+          day = "天";
+          break;
+      }
+
+      // 数组方式：
+      var arrDay = [
+        "星期天",
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六",
+      ]; // 用date.getDay当作下标访问数组
+
+      console.log(
+        "现在是" +
+          year +
+          "年" +
+          month +
+          "月" +
+          dates +
+          "日" +
+          " " +
+          "星期" +
+          day +
+          " " +
+          hour +
+          "时" +
+          min +
+          "分" +
+          secend +
+          "秒"
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

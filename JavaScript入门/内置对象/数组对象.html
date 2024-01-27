@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组对象</title>
+    <script>
+      /* 数组对象有太多太多的方法了，需要的时候自行查阅MDN */
+      /* 回忆new Array()创造数组 */
+      var arr1 = new Array(321); // 只写一个参数表示这个数组的长度为321
+      var arr2 = new Array(1, 23); // 两个及两个以上才表示为数组赋值
+      console.log(arr1);
+      console.log(arr2);
+
+      /* 检测是否为数组 instanceof Array, Array.isArray */
+      var str = "gura";
+      var obj = {};
+      console.log(str instanceof Array);
+      console.log(obj instanceof Array);
+      console.log(arr1 instanceof Array);
+
+      console.log("");
+
+      // 兼容性：>= ie9
+      console.log(Array.isArray(str));
+      console.log(Array.isArray(obj));
+      console.log(Array.isArray(arr2));
+
+      /* 添加数组元素的方法 */
+      // 1. push() 在数组末尾添加一个或多个数组元素
+      var arr3 = [1, 2, 3];
+      var rePush = arr3.push(4, "gura"); // 返回值是新数组的长度
+      console.log(arr3);
+      console.log(rePush); // 5
+
+      // 2.unshift()在数组前面插入新的元素
+      var arr4 = [2, 3, 4];
+      var reUnshift = arr4.unshift("gura", 5); // 返回值是新数组长度
+      console.log(arr4);
+      console.log(reUnshift); // 5
+
+      /* 删除数组元素的方法 */
+      // 1.pop() 删除数组的最后一个元素，返回被删除的元素
+      var arr5 = [1, 2, 3];
+      var rePop = arr5.pop();
+      console.log(arr5);
+      console.log(rePop);
+
+      // 2.shift() 删除数组的第一个元素，返回被删除的元素
+      var arr6 = [1, 2, 3];
+      var reShift = arr6.shift();
+      console.log(arr6);
+      console.log(reShift);
+
+      /* 数组排序 */
+      // 1.翻转数组 reverse()
+      var arr7 = ["臭豆腐", "腐乳", "老干妈"];
+      console.log(arr7.reverse());
+
+      // 2.冒泡排序 sort()
+      var arr8 = [1, 312, 43, 0, -123, 0];
+      console.log(arr8.sort()); // sort会按字符串排序，数组元素数字位数不统一时会出错
+      // 解决办法：
+      arr8.sort(function (a, b) {
+        return a - b;
+      }); // 升序
+      console.log(arr8);
+
+      arr8.sort(function (a, b) {
+        return b - a;
+      }); // 降序
+      console.log(arr8);
+
+      /* 数组索引方法 */
+      // 1.indexOf(), 返回参数所在的第一个数组下标, 参数不在数组钟则返回-1
+      var arr9 = ["唱", "跳", "rap", "篮球", "rap"];
+      console.log(arr9.indexOf("rap"));
+
+      // 2.lastIndexOf(), 返回参数所在的第一个数组下标，但是它从数组尾部开始找，找不到也是返回-1
+      console.log(arr9.lastIndexOf("rap"));
+
+      /* 数组转换为字符串 */
+      // 1. toString 将数组一整个转换为字符串(用逗号隔开每个数组元素)
+      var arr10 = [1, 2, 3];
+      console.log(arr10.toString());
+
+      // 2.join(分隔符),参数可以改变数组各元素的连接符号，默认是,
+      var arr11 = [1, 2, 3];
+      console.log(arr11.join("&"));
+    </script>
+  </head>
+  <body></body>
+</html>

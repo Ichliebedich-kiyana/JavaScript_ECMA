@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获得日期的总的毫秒形式</title>
+    <script>
+      /* 时间戳 */
+      // Date对象是基于1970年1月1日(世界标准时间)起的毫秒数
+
+      // 通过 valueOf() getTime()获得
+      var date = new Date();
+      console.log("距离1970年1月1日已经过去了" + date.valueOf() + "毫秒了");
+
+      console.log(date.getTime());
+
+      var date1 = +new Date(); // 返回就是总的毫秒数(常用)
+      console.log(date1);
+
+      console.log(Date.now()); // 这是使用了一个新对象？H5新增
+    </script>
+  </head>
+  <body></body>
+</html>

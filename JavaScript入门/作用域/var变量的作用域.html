@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>变量的作用域</title>
+    <script>
+      // 变量的作用域：全局变量和局部变量
+      // 1.全局变量：在全局作用域下的变量
+      var num = "全局变量"; // num就是一个全局变量
+      function fn() {
+        console.log(num); // 全局变量即使不作为参数在自定义函数内也可以使用
+
+        var num1 = "局部变量";
+
+        num2 = "全局变量2"; // 这是声明全局变量的声明方式
+      }
+      fn();
+      console.log(num1); // 局部变量只能在它指定的区域使用
+      console.log(num2); // 这里没打印出来？
+
+      // 全局变量只有浏览器关闭时才会被释放，比较占用内存资源
+      // 局部变量当程序执行完毕后就会自动释放，节省内存
+
+      // 块级作用域在es6的时候js新增了
+      // 块级作用域即为for,if等花括号内定义的变量
+    </script>
+  </head>
+  <body></body>
+</html>

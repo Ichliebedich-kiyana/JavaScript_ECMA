@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1到100的和</title>
+    <script>
+      var sum = 0;
+      for (var i = 1; i <= 100; i++) sum += i;
+      alert("1加到100等于" + sum);
+
+      var oddSum = 0;
+      for (var i = 1; i <= 100; i += 2) {
+        oddSum += i;
+      }
+      alert("1到100的奇数和是" + oddSum);
+
+      var evenSum = 0;
+      for (var i = 0; i <= 100; i += 2) {
+        evenSum += i;
+      }
+      alert("1加到100的偶数和是" + evenSum);
+    </script>
+  </head>
+  <body></body>
+</html>

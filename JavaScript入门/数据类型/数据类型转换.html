@@ -1,0 +1,84 @@
+<!-- 数字型和布尔型在控制台中是蓝色的 -->
+<!-- 字符串型是黑色的 -->
+<!-- null和undefined是灰色的 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据类型转换</title>
+    <script>
+      //一.数字型转换成字符串型
+      var numToStr1 = 1;
+      var numToStr2 = 2;
+      var numToStr3 = 3;
+
+      // 1.变量名.toString()
+      var str1 = numToStr1.toString();
+      console.log(str1);
+      console.log(typeof str1);
+
+      // 2.String(变量名)
+      var str2 = String(numToStr2);
+      console.log(str2);
+      console.log(typeof str2);
+
+      // *3.利用与空字符串的拼接(隐式转换，最常用，前两种都用得少)
+      var str3 = "" + numToStr3;
+      console.log(str3);
+      console.log(typeof str3);
+
+      //二.字符型转换数字型
+      var strToNum1 = "11";
+      var strToNum2 = "12.22";
+      var strToNum3 = "13.68";
+
+      //*1.parseInt(变量名),转成整型
+      //含浮点的字符串通过这种方式进行转换时，会自动取整
+      var num1 = parseInt(strToNum1);
+      console.log(num1);
+      console.log(typeof num1);
+      console.log(parseInt("120我pxsdada")); //parseInt会自动去掉数字后面的所有字符，但是以数字外的字符开头则无法进行转换
+
+      //*2.parseFloat(变量名)
+      //其他功能与parseInt相同
+      var num2 = parseFloat(strToNum2);
+      console.log(num2); //字符串内是整型转换后不会补小数点
+      console.log(typeof num2);
+
+      //3.Number(变量名)
+      //它可以转浮点型
+      var num3 = Number(strToNum3);
+      console.log(num3);
+      console.log(typeof num3);
+
+      //4.利用字符串 - 0(*和/也行)
+      console.log("231" - 0);
+      console.log("100" / 1);
+      console.log("150" - "31");
+      console.log("100" * "2");
+
+      //三.转换成布尔型
+      // Boolean(变量名);
+      //代表空，否定的值会被转换成false,如0, '', NaN, null, undefined
+      //其余则转换成true
+      var strToBool = "true";
+      var numToBool = "1";
+      var bool1 = Boolean(strToBool);
+      var bool2 = Boolean(numToBool);
+      console.log(bool1);
+      console.log(bool2);
+      console.log("\n");
+      //false
+      console.log(Boolean(""));
+      console.log(Boolean(0));
+      console.log(Boolean(NaN));
+      console.log(Boolean(null));
+      console.log(Boolean(undefined));
+      //true
+      console.log(Boolean("哈哈哈哈哈"));
+      console.log(Boolean(12));
+    </script>
+  </head>
+  <body></body>
+</html>

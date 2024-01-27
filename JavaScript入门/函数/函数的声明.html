@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数的声明</title>
+    <script>
+      // 两种方式
+      // 1.function关键字自定义函数(命名函数)
+      function sayHi() {
+        console.log("你好");
+      }
+      sayHi();
+
+      // 2.函数表达式
+      // var 变量名 = function() {}
+      // 这样声明的函数没有函数名， 被称为匿名函数
+      // 调用时用变量名调用
+      // 其他于关键字命名没有区别
+      var fun = function () {
+        console.log("我是函数表达式");
+      };
+      fun();
+    </script>
+  </head>
+  <body></body>
+</html>

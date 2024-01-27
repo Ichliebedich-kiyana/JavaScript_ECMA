@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>冒泡牌序</title>
+    <script>
+      var arr = [];
+      var arrNum = parseInt(prompt("请输入数组的元素个数"));
+      var flag = 0;
+      for (var i = 0; i < arrNum; i++) {
+        arr[i] = parseFloat(prompt("请输入第" + (i + 1) + "个元素的值"));
+      }
+
+      for (var i = 0; i < arrNum - 1; i++) {
+        for (var j = 0; j < arrNum - 1 - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+            var temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+            flag = 1;
+          }
+        }
+        if (flag == 0) {
+          break;
+        }
+      }
+
+      for (var i = 0; i < arrNum; i++) {
+        console.log(arr[i]);
+      }
+      alert("排序好的数组已打印在控制台中");
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>判断成绩</title>
+    <script>
+      //大于等于90分：A
+      //80(含)-90：B
+      //70(含)-80：C
+      //60(含)-70：D
+      //60(不含)：寄
+
+      var score = prompt("请输入您的成绩");
+
+      //这这些判断符已经蕴涵了类型转换
+      if (score > 100 || score < 0) {
+        alert("牛皮");
+      } else if (score >= 90) {
+        alert("A");
+      } else if (score >= 80) {
+        alert("B");
+      } else if (score >= 70) {
+        alert("C");
+      } else if (score >= 60) {
+        alert("D");
+      } else if (score < 60) {
+        alert("寄");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

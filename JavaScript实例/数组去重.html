@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组去重</title>
+    <script>
+      var arr = ["c", "a", "z", "a", "x", "a", "x", "c", "b"];
+      function deleteSame(arr) {
+        var newArr = [];
+        if (Array.isArray(arr) == false) console.log("请给老子输入一个数组");
+        for (var i = 0; i < arr.length; i++) {
+          if (newArr.indexOf(arr[i]) == -1) newArr.push(arr[i]); // 如果旧数组里的元素在新数组中没出现，那么就把它push到新数组里
+        }
+
+        return newArr;
+      }
+      var newArr = deleteSame(arr);
+      console.log(newArr);
+    </script>
+  </head>
+  <body></body>
+</html>

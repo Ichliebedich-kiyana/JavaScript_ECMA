@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>逻辑与的逻辑中断</title>
+    <script>
+      // 当由多个表达式(或值)时，左边的表达式值可以确定结果时，就不会继续运算右边表达式的值(逻辑断路)
+
+      // 第一个表达式的值为真,则返回表达式2
+      console.log(123 && 233 && 322); // 233
+
+      // 第一个表达式的值为假，则返回表达式1
+      console.log(0 && 123 && 123143 && 324235); // 0
+    </script>
+  </head>
+  <body></body>
+</html>

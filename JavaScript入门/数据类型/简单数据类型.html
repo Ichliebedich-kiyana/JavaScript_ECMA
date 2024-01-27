@@ -1,0 +1,70 @@
+<!-- 1.Number:数字型，包括整型值和浮点型值 -->
+<!-- 2.Boolean:布尔值类型，如true,false,等价于整型的1和0 -->
+<!-- 3，String:字符串类型 -->
+<!-- 4.Underfined:val a;声明了变量但没有为变量初始化时，变量的数据类型 -->
+<!-- 5.null:var a = null;声明了变量a为空值 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简单数据类型</title>
+    <script>
+      //数字型
+      var num = 10; //整型
+      var PI = 3.1415926; //浮点型
+      // var num1 = 01; //0开头的数表示转换成八进制
+      // console.log(num1);
+      var num2 = 0xa;
+      console.log(num2);
+
+      console.log(Number.MAX_VALUE); //数字型的最大值
+      console.log(Number.MIN_VALUE); //数字型的最小值
+
+      // 任何比MAX_VALUE大的数都是无穷大，任何比MIN_VALUE小的数都是无穷小
+      console.log(Infinity); //无穷大
+      console.log(-Infinity); //无穷小
+
+      //isNaN()这个函数用来判断是否是数字，是数字返回false,否则返回true
+      console.log(isNaN(12)); //false
+      console.log(isNaN("hh")); //true
+
+      //length函数计算字符串的长度
+      var strLen = "gura";
+      console.log(strLen.length);
+
+      //js里字符串单双引号都可以，但推荐单引号因为HTML里标签属性用的是双引号
+      //引号嵌套使用时遵从外双内单，外单内双的原则，避免引起歧义
+      // \为转移符号，在引号嵌套中也可以使用
+      var str = "我是一个'帅比'";
+      console.log(str);
+
+      //字符串的拼接：字符串 + 任何类型 = 字符串
+      //这意味着字符串与其他类型的相加都会进行强制类型转换
+      console.log("海绵" + "宝宝");
+      // 在字符串中拼接变量口诀：引引++
+      console.log("我是第" + "1" + "名");
+      console.log(19 + "19");
+
+      //布尔型
+      var flag = true; //1
+      var flag1 = false; //0
+      console.log(flag + flag1);
+
+      //null空值
+      var space = null;
+      console.log(space);
+
+      //未定义undefine
+      var a = "gura";
+      var b = 1;
+      var c = false;
+      var realspace;
+      console.log(d + "gura"); //undfinegura
+      console.log(d + 1); //NaN
+      console.log(d + false); //NaN
+      console.log(realspace + realspace); //NaN
+    </script>
+  </head>
+  <body></body>
+</html>
